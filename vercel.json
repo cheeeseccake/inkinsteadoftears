@@ -5,34 +5,14 @@
       "runtime": "vercel-php@0.9.0"
     }
   },
-  "rewrites": [
-    {
-      "source": "/",
-      "destination": "/api/index.php"
-    },
-    {
-      "source": "/index.php",
-      "destination": "/api/index.php"
-    },
-    {
-      "source": "/about.php",
-      "destination": "/api/about.php"
-    },
-    {
-      "source": "/writings.php",
-      "destination": "/api/writings.php"
-    },
-    {
-      "source": "/featured.php",
-      "destination": "/api/featured.php"
-    },
-    {
-      "source": "/submit.php",
-      "destination": "/api/submit.php"
-    },
-    {
-      "source": "/contact.php",
-      "destination": "/api/contact.php"
-    }
+  "routes": [
+    { "src": "^/$", "dest": "/api/index.php" },
+    { "src": "^/index\\.php$", "dest": "/api/index.php" },
+    { "src": "^/about\\.php$", "dest": "/api/about.php" },
+    { "src": "^/writings\\.php$", "dest": "/api/writings.php" },
+    { "src": "^/featured\\.php$", "dest": "/api/featured.php" },
+    { "src": "^/submit\\.php$", "dest": "/api/submit.php" },
+    { "src": "^/contact\\.php$", "dest": "/api/contact.php" },
+    { "handle": "filesystem" }
   ]
 }
